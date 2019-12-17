@@ -1,4 +1,3 @@
-<my-app>loading</my-app>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,10 +29,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link" id="bookTab" href="#">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Music</a>
+                    <a class="nav-link" id="musicTab" href="#">Music</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +44,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <img class="card-img-top" src="./images/img_avatar1.png" alt="Card image"
+                            <img class="card-img-top" src="./images/book1.png" alt="Card image"
                                 style="width:100%">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -67,7 +66,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <img class="card-img-top" src="./images/img_avatar1.png" alt="Card image"
+                            <img class="card-img-top" src="./images/book2.png" alt="Card image"
                                 style="width:100%">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -76,8 +75,8 @@
                                 <p class="card-text">Some example text some example text. John Doe is an architect and
                                     engineer
                                 </p>
-                                <a onclick="readBook('./PDF/book2.pdf')" class="btn btn-primary stretched-link">Read
-                                    Book</a>
+                                <button onclick="readBook('./PDF/book1.pdf')"
+                                    class="btn btn-primary stretched-link">Read Book</button>
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <img class="card-img-top" src="./images/img_avatar1.png" alt="Card image"
+                            <img class="card-img-top" src="./images/book3.png" alt="Card image"
                                 style="width:100%">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -98,8 +97,8 @@
                                 <p class="card-text">Some example text some example text. John Doe is an architect and
                                     engineer
                                 </p>
-                                <a onclick="readBook('./PDF/book2.pdf')" class="btn btn-primary stretched-link">Read
-                                    Book</a>
+                                <button onclick="readBook('./PDF/book1.pdf')"
+                                    class="btn btn-primary stretched-link">Read Book</button>
                             </div>
                         </div>
                     </div>
@@ -111,15 +110,14 @@
 
     </div>
     <div class="container-fluid" id="pdfReader" style="display: none;" style="margin-top:30px">
-
+        <canvas id="the-canvas"></canvas>
         <div>
             <button id="prev">Previous</button>
             <button id="next">Next</button>
             &nbsp; &nbsp;
             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+            <button id="cancel">Cancel</button>
         </div>
-
-        <canvas id="the-canvas"></canvas>
     </div>
     <div class="container-fluid" style="margin-top:30px" id="music" style="display: none;">
         <div class="row">
@@ -129,7 +127,7 @@
                         <img src="./images/music1.png" class="align-self-start mr-3" style="width:60px">
                         <div class="media-body">
                             <h4>Media Top</h4>
-                            <audio src="./music/music1.mp3" controls>
+                            <audio src="./music/song1.mp3" controls>
                                 <p>If you are reading this, it is because your browser does not support the audio
                                     element.</p>
                             </audio>
@@ -142,10 +140,10 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="card">
                     <div class="media">
-                        <img src="./images/music2.png" class="align-self-start mr-3" style="width:60px">
+                        <img src="./music/song1.mp3" class="align-self-start mr-3" style="width:60px">
                         <div class="media-body">
                             <h4>Media Top</h4>
-                            <audio src="./music/music2.mp3" controls>
+                            <audio src="./music/song2.mp3" controls>
                                 <p>If you are reading this, it is because your browser does not support the audio
                                     element.</p>
                             </audio>
@@ -161,7 +159,7 @@
                         <img src="./images/music3.png" class="align-self-start mr-3" style="width:60px">
                         <div class="media-body">
                             <h4>Media Top</h4>
-                            <audio src="./music/music3.mp3" controls>
+                            <audio src="./music/song3.mp3" controls>
                                 <p>If you are reading this, it is because your browser does not support the audio
                                     element.</p>
                             </audio>

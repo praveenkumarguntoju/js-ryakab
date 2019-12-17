@@ -1,3 +1,31 @@
+$(document).ready(function(){
+    var ele = document.getElementById("music")
+    ele.style['display']= "none";
+    $("#musicTab").on("click", function(){
+        var ele = document.getElementById("music")
+    ele.style['display']= "block";
+        var ele = document.getElementById("books")
+        ele.style['display']= "none";
+      });
+      $("#bookTab").on("click", function(){
+        var ele = document.getElementById("books")
+        ele.style['display']= "block";
+        var ele = document.getElementById("music")
+        ele.style['display']= "none";
+        var pdfele = document.getElementById("pdfReader")
+        pdfele.style['display']= "none";
+      });
+      $("#cancel").on("click", function(){
+        var ele = document.getElementById("books")
+        ele.style['display']= "block";
+        var ele = document.getElementById("music")
+        ele.style['display']= "none";
+        var pdfele = document.getElementById("pdfReader")
+        pdfele.style['display']= "none";
+      });
+  });
+
+
 function readBook(bookName) {
     // document.getElementById("books").innerHTML = Date();
     var ele = document.getElementById("books")
@@ -103,3 +131,6 @@ function readBook(bookName) {
       renderPage(pageNum);
     });
   }
+
+
+ 
